@@ -3,46 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deniz Karayiğit | Yazılımcı & Hacker</title>
+    <title>Deniz Karayığit | CyberSecurity & Developer Portfolio</title>
+    <meta name="description" content="Deniz Karayığit - Yazılım Geliştirici & Siber Güvenlik Analisti Kişisel Portfolyosu.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Ana Sayfa -->
-    <section id="home" class="section">
-        <div class="content">
-            <h1>Merhaba, Ben Deniz Karayiğit</h1>
-            <p>Yazılımcı & Etik Hacker</p>
-            <a href="#contact" class="btn">İletişime Geç</a>
-        </div>
-    </section>
+    <!-- Arka Plan Matrix / Parçacık Canvas -->
+    <canvas id="cyber-canvas"></canvas>
 
-    <!-- Hakkımda -->
-    <section id="about" class="section">
-        <div class="content">
-            <h2>Hakkımda</h2>
-            <p>
-                Yazılım geliştirme ve siber güvenlik tutkunu. Python, JavaScript ve etik hacking konularında deneyimli.
-                Projelerimde güvenlik ve yenilikçi çözümler sunmayı hedefliyorum.
+    <!-- Navigasyon Barı -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-icon">&lt;/&gt;</span>
+                <span class="logo-text">DENIZ.K</span>
+            </a>
+            <div class="nav-toggle" id="mobile-menu-btn">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Giriş</a></li>
+                <li><a href="#about" class="nav-link">Hakkımda</a></li>
+                <li><a href="#projects" class="nav-link">Projeler</a></li>
+                <li><a href="#terminal" class="nav-link">Terminal</a></li>
+                <li><a href="#contact" class="nav-link">İletişim</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION -->
+    <header id="home" class="hero-section">
+        <div class="hero-content">
+            <div class="cyber-badge">SYSTEMS ACTIVE</div>
+            <h1 class="glitch-text" data-text="DENİZ KARAYİĞİT">DENİZ KARAYİĞİT</h1>
+            <h2 class="typing-container">
+                <span class="typing-text"></span><span class="cursor">|</span>
+            </h2>
+            <p class="hero-desc">
+                Yazılım mimarisi, siber güvenlik analitiği ve penetrasyon testleri konularında uzmanlaşmış, güvenli ve yüksek performanslı çözümler geliştiren teknoloji tutkunu.
             </p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-code"></i> Projelerimi Gör</a>
+                <a href="#contact" class="btn btn-secondary"><i class="fa-solid fa-shield-halved"></i> İletişime Geç</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span class="mouse">
+                <span class="wheel"></span>
+            </span>
+            <span class="scroll-text">Aşağı Kaydır</span>
+        </div>
+    </header>
+
+    <!-- 2. HAKKIMDA SECTION -->
+    <section id="about" class="section-container">
+        <div class="section-header">
+            <h2 class="section-title">HAKKIMDA</h2>
+            <div class="section-line"></div>
+        </div>
+        
+        <div class="about-grid">
+            <div class="about-info-card glass-card">
+                <h3>Siber Güvenlik ve Geliştirme Tutkusu</h3>
+                <p>
+                    Teknoloji dünyasında güvenliği en ön planda tutarak web uygulamaları, borsa algoritmaları ve otomasyon sistemleri geliştiriyorum. Siber tehditleri analiz etmek, sistem açıklarını tespit etmek ve bu açıklara karşı aşılmaz bariyerler kurmak en büyük motivasyon kaynağım.
+                </p>
+                <p>
+                    Python, JavaScript, Go ve Linux sistem yönetimi alanlarında derinlemesine bilgi sahibiyim. Hem defansif (Mavi Takım) hem de ofansif (Kırmızı Takım) siber güvenlik tekniklerine odaklanarak, yazılımlarımın kodlama aşamasından itibaren güvenli olmasını sağlıyorum.
+                </p>
+            </div>
+            
+            <div class="skills-card glass-card">
+                <h3>Teknoloji Envanteri</h3>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <span class="skill-name">Python / Algoritmik Ticaret</span>
+                        <div class="skill-bar-bg"><div class="skill-bar" style="width: 95%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Penetrasyon Testi / Etik Hacking</span>
+                        <div class="skill-bar-bg"><div class="skill-bar" style="width: 90%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">JavaScript / Node.js</span>
+                        <div class="skill-bar-bg"><div class="skill-bar" style="width: 85%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Linux / Bash Scripting / Docker</span>
+                        <div class="skill-bar-bg"><div class="skill-bar" style="width: 88%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Veri Tabanı Güvenliği & SQL</span>
+                        <div class="skill-bar-bg"><div class="skill-bar" style="width: 80%"></div></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- İletişim -->
-    <section id="contact" class="section">
-        <div class="content">
-            <h2>İletişim</h2>
-            <div class="social-links">
-                <a href="https://www.instagram.com/deniz_kry05" target="_blank">
-                    <i class="fab fa-instagram"></i> Instagram: deniz_kry05
+    <!-- 3. PROJELER SECTION -->
+    <section id="projects" class="section-container">
+        <div class="section-header">
+            <h2 class="section-title">PROJELER</h2>
+            <div class="section-line"></div>
+        </div>
+        
+        <div class="projects-grid">
+            <!-- Proje 1 -->
+            <div class="project-card glass-card">
+                <div class="project-image-placeholder">
+                    <i class="fa-solid fa-chart-line project-icon"></i>
+                </div>
+                <div class="project-content">
+                    <span class="project-tag">Python & API</span>
+                    <h3>Borsa & Varant Botu Pro</h3>
+                    <p>BIST piyasalarını gerçek zamanlı takip eden, RSI ve EMA trend analizleri yaparak Telegram üzerinden kullanıcılara histerezis korumalı akıllı alım-satım alarmları üreten yapay zeka entegrasyonlu bot sistemi.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>yFinance</span>
+                        <span>Telegram API</span>
+                        <span>Grok AI</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proje 2 -->
+            <div class="project-card glass-card">
+                <div class="project-image-placeholder">
+                    <i class="fa-solid fa-passport project-icon"></i>
+                </div>
+                <div class="project-content">
+                    <span class="project-tag">Web & Automation</span>
+                    <h3>Visa-Bot</h3>
+                    <p>Vize başvuru randevularını ve müsaitlik durumlarını otomatik olarak tarayıp en uygun tarihleri anında bildiren, arka planda güvenli oturum yönetimi sağlayan gelişmiş otomasyon ve veri kazıma botu.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Playwright</span>
+                        <span>Cloudflare Bypass</span>
+                        <span>JSON</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proje 3 -->
+            <div class="project-card glass-card">
+                <div class="project-image-placeholder">
+                    <i class="fa-solid fa-shield-halved project-icon"></i>
+                </div>
+                <div class="project-content">
+                    <span class="project-tag">CyberSecurity</span>
+                    <h3>Siber Güvenlik Araç Kiti</h3>
+                    <p>Web sunucularındaki zafiyetleri tarayan, SQL injection ve XSS açıklarını tespit ederek raporlayan, ağ trafiği analizleri yapan özel olarak geliştirilmiş ofansif siber güvenlik aracı.</p>
+                    <div class="project-tech">
+                        <span>Bash</span>
+                        <span>Go</span>
+                        <span>Nmap API</span>
+                        <span>Scapy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. INTERACTIVE TERMINAL SECTION -->
+    <section id="terminal" class="section-container">
+        <div class="section-header">
+            <h2 class="section-title">ETKİLEŞİMLİ TERMINAL</h2>
+            <div class="section-line"></div>
+        </div>
+        
+        <div class="terminal-container glass-card">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="btn-close"></span>
+                    <span class="btn-minimize"></span>
+                    <span class="btn-expand"></span>
+                </div>
+                <div class="terminal-title">guest@denizkarayigit.com: ~</div>
+                <div class="terminal-icon"><i class="fa-solid fa-terminal"></i></div>
+            </div>
+            <div class="terminal-body" id="terminal-body">
+                <div class="terminal-line">Sisteme Hoş Geldiniz. Bağlantı şifreli ve güvenlidir.</div>
+                <div class="terminal-line">Kullanabileceğiniz komutlar için <span class="term-highlight">help</span> yazın.</div>
+                <div class="terminal-input-line">
+                    <span class="terminal-prompt">guest@denizkarayigit:~$</span>
+                    <input type="text" id="terminal-input" autocomplete="off" autofocus>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. İLETİŞİM SECTION -->
+    <section id="contact" class="section-container contact-section">
+        <div class="section-header">
+            <h2 class="section-title">İLETİŞİM</h2>
+            <div class="section-line"></div>
+        </div>
+        
+        <div class="contact-card glass-card">
+            <h3>Güvenli Kanal Kurun</h3>
+            <p>Projeler, siber güvenlik danışmanlığı veya iş ortaklıkları için aşağıdaki kanallardan şifreli iletişim başlatabilirsiniz.</p>
+            
+            <div class="contact-links">
+                <a href="https://www.instagram.com/deniz_kry05" target="_blank" class="contact-item">
+                    <div class="contact-icon instagram"><i class="fab fa-instagram"></i></div>
+                    <div class="contact-details">
+                        <span class="contact-label">Instagram</span>
+                        <span class="contact-value">@deniz_kry05</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/deniz2780-pixel" target="_blank" class="contact-item">
+                    <div class="contact-icon github"><i class="fab fa-github"></i></div>
+                    <div class="contact-details">
+                        <span class="contact-label">GitHub</span>
+                        <span class="contact-value">deniz2780-pixel</span>
+                    </div>
+                </a>
+
+                <a href="mailto:deniz2780karayigit@gmail.com" class="contact-item">
+                    <div class="contact-icon email"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="contact-details">
+                        <span class="contact-label">E-Posta</span>
+                        <span class="contact-value">deniz2780karayigit@gmail.com</span>
+                    </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Deniz Karayiğit. Tüm hakları saklıdır.</p>
+        <div class="footer-content">
+            <p>&copy; 2026 Deniz Karayığit. Tüm Hakları Saklıdır.</p>
+            <div class="security-stamp">
+                <i class="fa-solid fa-shield-halved"></i> SECURE SOCKET CONNECTION ACTIVE
+            </div>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
