@@ -1,0 +1,88 @@
+/* Genel Stiller */
+body {
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #0f0f0f;
+    color: #00ff00;
+    line-height: 1.6;
+}
+
+.section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+}
+
+#home {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+}
+
+#about {
+    background-color: #1a1a1a;
+}
+
+#contact {
+    background-color: #1a1a1a;
+}
+
+/* Başlık ve Metin Stilleri */
+h1, h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+/* Buton Stili */
+.btn {
+    display: inline-block;
+    background-color: #00ff00;
+    color: #000;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #00cc00;
+}
+
+/* Sosyal Medya Linkleri */
+.social-links {
+    margin: 2rem 0;
+}
+
+.social-links a {
+    color: #00ff00;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+.social-links a:hover {
+    color: #00cc00;
+}
+
+/* Footer Stili */
+footer {
+    background-color: #000;
+    color: #00ff00;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
