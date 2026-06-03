@@ -232,4 +232,49 @@ Tüm sistemler aktiftir. Loglar denizkarayigit.com üzerinde şifrelenmiştir.`;
             terminalInput.focus();
         });
     }
+
+    // ── GÜVENLİK DUVARI (STEALTH SECURITY SHIELD) ─────────────────────
+    // Sağ tıklamayı engelle (Anti-Inspect)
+    document.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+    });
+
+    // Geliştirici kısayollarını engelle (F12, Inspect, Kaynağı Görüntüle)
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "F12" || 
+            (e.ctrlKey && e.shiftKey && e.key === "I") || 
+            (e.ctrlKey && e.shiftKey && e.key === "J") || 
+            (e.metaKey && e.altKey && (e.key === "i" || e.key === "I")) ||
+            (e.metaKey && e.altKey && (e.key === "j" || e.key === "J")) ||
+            (e.ctrlKey && (e.key === "u" || e.key === "U")) ||
+            (e.metaKey && e.altKey && (e.key === "u" || e.key === "U"))) {
+            e.preventDefault();
+        }
+    });
+
+    // Konsol açıldığında debugger tetikleyip tarayıcıyı kilitle
+    let devtoolsOpen = false;
+    const threshold = 160;
+    setInterval(() => {
+        const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+        const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+        
+        if (widthThreshold || heightThreshold) {
+            if (!devtoolsOpen) {
+                devtoolsOpen = true;
+                console.clear();
+                console.log(
+                    "%c🚧 ERİŞİM YASAKTIR 🚧", 
+                    "color: #ff5f56; font-size: 24px; font-weight: bold; text-shadow: 0 0 10px rgba(255,95,86,0.5);"
+                );
+                console.log(
+                    "%cBu sistem Deniz Karayığıt tarafından korunmaktadır. Tüm izinsiz denetleme girişimleri loglanmaktadır.", 
+                    "color: #00ff80; font-size: 14px; font-family: monospace;"
+                );
+            }
+            debugger;
+        } else {
+            devtoolsOpen = false;
+        }
+    }, 1000);
 });
